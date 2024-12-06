@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { RecoverySchema } from '@/helpers/schemas/auth.chemas';
+import { RecoveryReq } from '@/schemas/auth.schemas';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ const RecoveryForm = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const result = RecoverySchema.safeParse({ email });
+        const result =  RecoveryReq.safeParse({ email });
 
         if (!result.success) {
             const errorMessages = result.error.errors.reduce(

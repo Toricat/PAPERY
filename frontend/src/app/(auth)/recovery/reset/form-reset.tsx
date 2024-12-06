@@ -1,6 +1,6 @@
 "use client";
 import React, { useState,Suspense } from 'react';
-import { ResetSchema } from '@/helpers/schemas/auth.chemas';
+import { ResetSchema } from '@/schemas/auth.schemas';
 import { useRouter,useSearchParams } from 'next/navigation';
 
 const ResetForm = () => {

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, Suspense } from 'react';
-import { VerifySchema } from '@/helpers/schemas/auth.chemas';
+import { VerifyReq } from '@/schemas/auth.schemas';
 import { useRouter } from 'next/navigation';
 
 const VerifyForm = () => {
@@ -10,7 +10,7 @@ const VerifyForm = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const result =  VerifySchema.safeParse({ verify });
+        const result =  VerifyReq.safeParse({ verify });
 
         if (!result.success) {
             
